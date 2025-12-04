@@ -49,6 +49,18 @@ public class Main {
         try {
             //休息一下，等待主线程完成后，再监控
             Thread.sleep(10 * 1000);
+            List<JSONObject> personInfoList;
+            if(PrivateConfig.genDan_isGenDan.equals("1")){
+                personInfoList = PrivateConfig.genDan_personInfoList;
+            }else if(PrivateConfig.biCoin_isBiCoin.equals("1")){
+                personInfoList = PrivateConfig.biCoin_personInfoList;
+            }else if(PrivateConfig.biCoins_isBiCoins.equals("1")){
+                personInfoList = PrivateConfig.biCoins_personInfoList;
+            }else if(PrivateConfig.ok_isOk.equals("1")){
+                personInfoList = PrivateConfig.ok_personInfoList;
+            }else {
+                personInfoList = PrivateConfig.personInfoList;
+            }
             int a = 0;
             while (true) {
                 try {
@@ -66,7 +78,7 @@ public class Main {
                         Thread.sleep(1000 * 60);
                         a++;
                         if(a > 3){
-                            qingCang(PrivateConfig.biCoin_personInfoList);
+                            qingCang(personInfoList);
                             break;
                         }
                         continue;
