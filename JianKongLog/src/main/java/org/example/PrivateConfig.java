@@ -46,6 +46,10 @@ public class PrivateConfig {
 
     public static void init1() {
 
+        if(config.get("computer") != null){
+            computer = config.getString("computer");
+        }
+
         if(config.getJSONObject("biCoin") != null) {
 
             JSONArray genDan_personInfo = config.getJSONObject("biCoin").getJSONArray("personInfo");

@@ -37,6 +37,10 @@ public class Main {
         }
         PrivateConfig.init1();
 
+        for(String s : args){
+            System.out.println(s);
+        }
+
         String logPathJianKong = args[0] + "//" + "JianKong.txt";
         fileLogJianKong = new File(logPathJianKong);
 
@@ -68,7 +72,12 @@ public class Main {
                     Thread.sleep(10 * 60 * 1000);
 //                    Thread.sleep(10 * 1000);
 
-                    if (System.currentTimeMillis() - fileLogJianKong.lastModified() > 20 * 60 * 1000L) {
+                    Long modified = fileLogJianKong.lastModified();
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String sd = sdf.format(new Date(modified)); // 时间戳转换日期
+                    System.out.println("Log文件修改时间：" + sd);
+
+                    if (System.currentTimeMillis() - modified > 20 * 60 * 1000L) {
 //                    if (System.currentTimeMillis() - fileLogJianKong.lastModified() > 20  * 1000L) {
                         T5.searchAll("log文件没有更新，抓紧电话胡亚龙");
                         Thread.sleep(1000 * 60);
