@@ -33,7 +33,7 @@ public class Main {
             System.out.println("开代理");
             System.setProperty("https.proxySet", "true");
             System.setProperty("https.proxyHost", "127.0.0.1");
-            System.setProperty("https.proxyPort", "10809");
+            System.setProperty("https.proxyPort", "10819");
         }
         PrivateConfig.init1();
 
@@ -80,7 +80,7 @@ public class Main {
                     if (System.currentTimeMillis() - modified > 20 * 60 * 1000L) {
 //                    if (System.currentTimeMillis() - fileLogJianKong.lastModified() > 20  * 1000L) {
                         T5.searchAll("log文件没有更新，抓紧电话胡亚龙");
-                        Thread.sleep(1000 * 60);
+                        /*Thread.sleep(1000 * 60);
                         T5.searchAll("log文件没有更新，抓紧电话胡亚龙");
                         Thread.sleep(1000 * 60);
                         T5.searchAll("log文件没有更新，抓紧电话胡亚龙");
@@ -90,7 +90,7 @@ public class Main {
                             qingCang(personInfoList);
                             break;
                         }
-                        continue;
+                        continue;*/
                     }
                     a = 0;
 
@@ -103,14 +103,14 @@ public class Main {
 
             }
 
-            while (true){
+            /*while (true){
                 try{
                     T5.searchAll("log文件没有更新，抓紧电话胡亚龙");
                 }catch (Exception e){
                     e.printStackTrace();
                 }
                 Thread.sleep(60*60 * 1000);
-            }
+            }*/
         } catch (Exception e) {
             System.out.println("监控log程序启动出错了");
             e.printStackTrace();

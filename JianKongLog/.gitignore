@@ -1,38 +1,25 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# IDE本地配置
+.idea/
 *.iml
+*.iws
 *.ipr
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Maven/Gradle编译产物
+target/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+out/
+*.class
 
-### VS Code ###
-.vscode/
+# 日志、临时文件
+*.log
+*.tmp
+*.bak
+logs/
 
-### Mac OS ###
+# 本地环境配置
+local.properties
+.env
+
+# 系统文件
 .DS_Store
+Thumbs.db
